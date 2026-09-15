@@ -18,9 +18,13 @@ for j in range(ind1, len(s)-1):
         ind2 = j+1
         break
 
+
 for e in range(ind2, len(s)-2):
-    while s[e] != 0:
-        res += s[i+2]
+    k += 1
+    if k == 2:
+        k = 0
+        res += s[e]
+        print(res)
 
 print(res)
 
