@@ -16,15 +16,11 @@ for j in range(ind1, len(s)-1):
     if s[j] in ch:
         res += s[j+1]
         ind2 = j+1
+        shag = abs(ind1 - ind2)
         break
 
-
-for e in range(ind2, len(s)-2):
-    k += 1
-    if k == 2:
-        k = 0
-        res += s[e]
-        print(res)
+for e in range(ind2, len(s)-shag, shag):
+    res += s[e+shag]
 
 print(res)
 
