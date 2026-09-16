@@ -28,7 +28,8 @@
 
 Программа и запуск:
 
-![alt text](../../images/lab1/04prz.png)
+![alt text](../../images/lab1/04nn.png)
+
 
 
 
