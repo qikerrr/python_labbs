@@ -37,10 +37,9 @@
 
 Программа:
 
-![alt text](../../images/lab1/05pr.png)
-Запуск:
+![alt text](../../images/lab1/05nn.png)
 
-![alt text](../../images/lab1/05z.png)
+
 
 ### **6 задание**
 
