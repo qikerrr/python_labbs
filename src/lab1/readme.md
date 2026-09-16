@@ -14,10 +14,8 @@
 
 Программа:
 
-![alt text](../../images/lab1/02pr.png)
-Запуск:
+![alt text](../../images/lab1/02n.png)
 
-![alt text](../../images/lab1/02z.png)
 
 ### **3 задание**
 
