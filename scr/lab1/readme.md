@@ -22,9 +22,9 @@
 **4 задание**
 
 --программа
-![alt text](../../images/lab1/04pr.png)
+![alt text](../../images/lab1/04prz.png)
 --запуск
-![alt text](../../images/lab1/04z.png)
+
 
 **5 задание**
 
