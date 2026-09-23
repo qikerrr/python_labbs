@@ -31,8 +31,22 @@ def unique_sorted(nums):
 
     return res
 
-print(unique_sorted([3, 1, 2, 1, 3]))
-print(unique_sorted([]))
-print(unique_sorted([-1, -1, 0, 2, 2]))
-print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
+##print(unique_sorted([3, 1, 2, 1, 3]))
+#print(unique_sorted([]))
+#print(unique_sorted([-1, -1, 0, 2, 2]))
+#print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
 
+
+def flatten(nums):
+    res = []
+
+    for s in nums:
+        if isinstance(s, ( list, tuple)) == True: # проверяем является ли эл. списком.кортежом
+            res.append(s)
+        else: return "TypeError"
+    return res
+
+print(flatten([[1, 2], [3, 4]]))
+print(flatten([[1, 2], (3, 4, 5)]))
+print(flatten([[1], [], [2, 3]]))
+print(flatten([[1, 2], "ab"]))

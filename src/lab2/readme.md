@@ -11,3 +11,7 @@
 ### (unique_sorted)
 
 ![alt text](../../images/lab2/0102.png)
+
+### (flatten)
+
+![alt text](../../images/lab2/0103.png)
