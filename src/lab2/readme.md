@@ -15,3 +15,17 @@
 ### (flatten)
 
 ![alt text](../../images/lab2/0103.png)
+
+### 2 задание
+
+### (transpose)
+
+![alt text](../../images/lab2/0201.png)
+
+### (row_sums)
+
+![alt text](../../images/lab2/02pr010203.png)
+
+### (col_sums)
+
+![alt text](../../images/lab2/02pr010203.png)
