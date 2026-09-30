@@ -14,7 +14,7 @@
 
 ### (flatten)
 
-![alt text](../../images/lab2/0103.png)
+![alt text](../../images/lab2/0103н.png)
 
 ## 2 задание - Задание B — matrix.py
 

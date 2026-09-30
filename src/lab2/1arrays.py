@@ -42,7 +42,8 @@ def flatten(nums):
 
     for s in nums:
         if isinstance(s, ( list, tuple)) == True: # проверяем является ли эл. списком.кортежом
-            res.append(s)
+            for elem in s:
+                res.append(elem)
         else: return "TypeError"
     return res
 
