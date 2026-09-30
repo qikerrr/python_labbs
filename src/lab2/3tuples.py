@@ -1,19 +1,14 @@
 def format_record(s):
 
-    if type(s) != tuple:
-        return 'TypeError = не тот тип данных'
-    if len(s) != 3:
-        return 'ValueError = введены не все данные'
-    if s[0] == '' or s[1] == '':
-        return 'ValueError = пустые данные'
-    if type(s[2]) != float:
-        return 'TypeError = неверный тип GPA'
+    if type(s) != tuple: return 'TypeError = не тот тип данных'
+    if len(s) != 3: return 'ValueError = введены не все данные'
+    if s[0] == '' or s[1] == '': return 'ValueError = пустые данные'
+    if type(s[2]) != float: return 'TypeError = неверный тип GPA'
 
     fio1 = s[0]
     group = s[1]
     gpa = s[2]
     res =''
-
     if not(0.0 <= gpa <= 5.0): return 'ValueError = неверный gpa'
 
     fio2 = fio1.split(" ")
@@ -29,9 +24,7 @@ def format_record(s):
             clovo = fio2[i]
             fio = fio + (clovo[0]).upper() + '.'
             
-
     res = '"' + fio  + ',' + ' ' + 'гр.' + ' ' + group + ',' + ' ' +'GPA' + ' ' + f'{gpa:.2f}' + '"'
-    
     return res
 
 print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))

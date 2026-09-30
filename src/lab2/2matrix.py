@@ -34,33 +34,34 @@ def row_sums(mat):
     res = []
 
     if proverka(mat) != 'ValueError':
-        if len(mat) != len(mat[0]): #проверка на прямоугольную матрицу
 
-            for j in range(len(mat)): #проход по строкам
-                sum = 0
-                for i in range(len(mat[j])): #проход по элементам строки
-                    sum += mat[j][i]
-                res.append(sum)
-        else:
-            return 'матрица не прямоугольная'
+        for j in range(len(mat)): #проход по строкам
+            sum = 0
+            for i in range(len(mat[j])): #проход по элементам строки
+                sum += mat[j][i]
+            res.append(sum)
+    else:
+        return 'матрица не прямоугольная = рваная матрица'
     return res
             
-print(row_sums([[1, 2, 3], [4, 5, 6]]))
-print(row_sums([[-1, 1], [10, -10]]))
-print(row_sums([[0, 0], [0, 0]]))
-print(row_sums([[1, 2], [3]]))
+#print(row_sums([[1, 2, 3], [4, 5, 6]]))
+#print(row_sums([[-1, 1], [10, -10]]))
+#print(row_sums([[0, 0], [0, 0]]))
+#print(row_sums([[1, 2], [3]]))
 
 def col_sums(mat):
     res = []
     if proverka(mat) != 'ValueError':
-        if len(mat) != len(mat[0]): #проверка прям.матрицы
 
-            for i in range(len(mat[0])):
-                sum = 0
-                for j in range(len(mat)): #проход по строкам
-                    sum += mat[j][i]
-                res.append(sum)
-        else: return 'матрица не прямоугольная'   
+        for i in range(len(mat[0])):
+            sum = 0
+            for j in range(len(mat)): #проход по строкам
+                sum += mat[j][i]
+            res.append(sum)
+    else: return 'матрица не прямоугольная = рваная матрица'   
     return res
 
-#print(col_sums([[1, 2, 3], [4, 5, 6]]))
+print(col_sums([[1, 2, 3], [4, 5, 6]]))
+print(col_sums([[-1, 1], [10, -10]]))
+print(col_sums([[0, 0], [0, 0]]))
+print(col_sums([[1, 2], [3]]))

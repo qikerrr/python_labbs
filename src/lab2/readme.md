@@ -26,6 +26,14 @@
 
 ![alt text](../../images/lab2/02pr010203.png)
 
+![alt text](../../images/lab2/0202.png)
+
 ### (col_sums)
 
 ![alt text](../../images/lab2/02pr010203.png)
+
+![alt text](../../images/lab2/0203.png)
+
+### 3 задание
+
+![alt text](../../images/lab2/03.png)
