@@ -44,5 +44,26 @@ def top_n(dict, n): #на вход кортеж
     return sorted(dict.items(), key = lambda i : (-i[1], i[0]))[:n]
 #через (items) делаем список и сортируем его по ключу -> делаем спец функцию чтобы сортировка была по убыванию
 
-print(' {"a":3,"b":2,"c":1} -> ', top_n({"a":3,"b":2,"c":1}, n =2), sep = "")
-print(' {"aa":2,"bb":2,"cc":1} -> ', top_n({"aa":2,"bb":2,"cc":1}, n =2), sep = "")
+#print(' {"a":3,"b":2,"c":1} -> ', top_n({"a":3,"b":2,"c":1}, n =2), sep = "")
+#print(' {"aa":2,"bb":2,"cc":1} -> ', top_n({"aa":2,"bb":2,"cc":1}, n =2), sep = "")
+
+
+# normalize
+assert normalize("ПрИвЕт\nМИр\t") == "привет мир"
+assert normalize("ёжик, Ёлка") == "ежик, елка"
+
+# tokenize
+assert tokenize("привет, мир!") == ["привет", "мир"]
+assert tokenize("по-настоящему круто") == ["по-настоящему", "круто"]
+assert tokenize("2025 год") == ["2025", "год"]
+
+# count_freq + top_n
+freq = count_freq(["a","b","a","c","b","a"])
+assert freq == {"a":3, "b":2, "c":1}
+assert top_n(freq, 2) == [("a",3), ("b",2)]
+
+# тай-брейк по слову при равной частоте
+freq2 = count_freq(["bb","aa","bb","aa","cc"])
+assert top_n(freq2, 2) == [("aa",2), ("bb",2)]
+
+print("все тесты прошли!")
