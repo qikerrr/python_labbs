@@ -3,13 +3,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from lib.text import tokenize, count_words, top_n
+from lib.text import tokenize, count_freq, top_n
 
 
 def main():
     text = sys.stdin.read()
     words = tokenize(text)
-    counts = count_words(words)
+    counts = count_freq(words)
 
     print(f"Всего слов: {len(words)}")
     print(f"Уникальных слов: {len(counts)}")
