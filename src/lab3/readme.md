@@ -2,7 +2,7 @@
 
 ## Задание A — `src/lib/text.py`
 
-> # **normalize**
+ # **`normalize`** 
 
 ```
 def  normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
