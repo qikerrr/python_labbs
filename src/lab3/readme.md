@@ -2,7 +2,7 @@
 
 ## Задание A — `src/lib/text.py`
 
- # **`normalize`** 
+ # 1. **`normalize`** 
 
 ```
 def  normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
@@ -23,7 +23,7 @@ def  normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
 ### **Тест-кейс**(normalize)
 ![alt text](../../images/lab3/03l0101.png)
 
- # **`tokenize`**
+ # 2. **`tokenize`**
 
 ```
 import re
@@ -38,7 +38,7 @@ def tokenize(text: str):
 
 ![alt text](../../images/lab3/03l0102.png)
 
- # **`count_freq`**
+ # 3. **`count_freq`**
 
 ```
 def count_freq(tokens: list[str]):
@@ -54,7 +54,7 @@ def count_freq(tokens: list[str]):
 
 ![alt text](../../images/lab3/03l0103.png)
 
- # **`top_n`**
+ # 4. **`top_n`**
 
 ```
 def top_n(dict, n): #на вход кортеж
