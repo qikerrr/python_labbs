@@ -1,6 +1,6 @@
 # ЛР3 — Тексты и частоты слов (словарь/множество)
 
-## Задание A — `src/lib/text.py`
+## Задание A — `src/lib/text3lab.py`
 
  # 1. **`normalize`** 
 
@@ -67,7 +67,7 @@ def top_n(dict, n): #на вход кортеж
 
 ![alt text](../../images/lab3/03l0104.png)
 
-## Задание B — `src/text_stats.py` (скрипт со stdin)
+## Задание B — `src/text_stats.py`
 
 ```
 import sys
