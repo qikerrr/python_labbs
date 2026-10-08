@@ -16,9 +16,12 @@ def  normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
 
     text = text.replace("\t", " ").replace("\r"," ").replace("\n"," ")
 
-    return " ".join(text.split()) # "схлоп" пробелов
+    return " ".join(text.split())
 
 ```
+>`text = text.replace("ё", "е").replace("Ё","Е")` - > замена Ёё на Ее.
+
+>*Схлоп* пробелов с помощью `return " ".join(text.split())`.
 
 ### **Тест-кейс**(normalize)
 ![alt text](../../images/lab3/03l0101.png)
@@ -30,9 +33,8 @@ import re
 
 def tokenize(text: str):
     return re.findall( r'\w+(?:-\w+)*', text) 
-#сравнивает с шаблоном и возвращает список, нересекающийся с шаблоном
-
 ```
+>Сравниваем с шаблоном и возвращаем список, непересекающийся с шаблоном
 
 ### **Тест-кейс**(tokenize)
 
@@ -49,7 +51,7 @@ def count_freq(tokens: list[str]):
     
     return freq
 ```
-Cмотрим ключ буквы, если его нет, то заносим 1(если есть просто добавляем к значению 1)
+>Cмотрим ключ буквы, если его нет, то заносим 1(если есть просто добавляем к значению 1)
 ### **Тест-кейс**(count_freq)
 
 ![alt text](../../images/lab3/03l0103.png)
@@ -59,9 +61,8 @@ Cмотрим ключ буквы, если его нет, то заносим 1
 ```
 def top_n(dict, n): #на вход кортеж
     return sorted(dict.items(), key = lambda i : (-i[1], i[0]))[:n]
-#через (items) делаем список и сортируем его по ключу -> делаем спец функцию чтобы сортировка была по убыванию
-
 ```
+>Через `items` делаем список и сортируем его по ключу -> делаем спец функцию, чтобы сортировка была по убыванию
 ### **Тест-кейс**(count_freq)
 
 ![alt text](../../images/lab3/03l0104.png)
