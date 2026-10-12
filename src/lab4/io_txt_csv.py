@@ -7,7 +7,7 @@ def ensure_parent_dir(path):
 def read_text(path, encounding: str = "utf-8"):
     return Path(path).read_text(encoding=encounding)
 
-def write_csv(rows, path, header):
+def write_csv(rows, path, header =None):
 
     rows = list(rows)
 
@@ -31,14 +31,9 @@ def write_csv(rows, path, header):
             writer.writerow(i)
 
 
+if __name__ == "__main__":
+    txt = read_text("data/lab4/input.txt")
+    print(txt)
 
-from pathlib import Path
-import sys
+    write_csv([("word", "count"), ("test", 3)], "data/lab4/proverka.csv")
 
-# Получаем папку, где лежит сам скрипт (src/lab4)
-BASE_DIR = Path(__file__).resolve().parent 
-
-# Поднимаемся на два уровня вверх (до python_labs) и идем в data/lab04
-file_path = BASE_DIR.parent.parent / "data" / "lab04" / "input.txt"
-
-text = read_text(file_path)
