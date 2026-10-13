@@ -18,7 +18,7 @@ def main():
         print(f"Ошибка: файл не найден: {INPUT_FILE}")
         sys.exit(1)
     except UnicodeDecodeError:
-        print(f"Ошибка: файл не читается в кодировке {FILE_ENCODING})
+        print(f"Ошибка: файл не читается в кодировке {FILE_ENCODING}")
         sys.exit(1)
 
     words = tokenize(normalize(text))
