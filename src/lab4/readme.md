@@ -1,8 +1,12 @@
 # ЛР4 — Файлы: TXT/CSV и отчёты по текстовой статистике
 
 ## Задание A — модуль `src/lab04/io_txt_csv.py`
-## **`Тест`**
-
+## **`Тест`***(input.txt)*
+`Входные данные`
+```
+Привет, мир! Привет!!!
+```
+`Терминал` + запись в **`proverka.csv`**
 ![alt text](../../images/lab4/04lab_ex_A_input.png)
 
 ### **`Код`**
@@ -119,7 +123,12 @@ if __name__ == "__main__":
 ---
 ## Задание B — скрипт `src/lab4/text_report.py`
 
-### **Тест**
+### **`Тест`***(input.txt)*
+`Входные данные`
+```
+Привет, мир! Привет!!!
+```
+`Терминал` + запись в **`report.csv`**
 
 ![alt text](../../images/lab4/04lab_ex_B_input.png)
 
@@ -131,7 +140,7 @@ python -m src.lab4.text_report
 ```
 
 
-### **Код**
+### **`Код`**
 
 ```
 import sys
@@ -172,7 +181,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-### **Разбор кода**
+### **`Разбор кода`**
 - `INPUT_FILE` - путь файла для чтения
 - `REPORT_FILE` - путь файла куда запишем CSV
 - `FILE_ENCODING` - указание нужной нам кодировки
@@ -195,7 +204,7 @@ def main():
 
 ![alt text](../../images/lab4/empty_test.png)
 
-- **Кодировка** -> другая кодировка выбирается параметром encoding, например: `read_text("data/lab4/input.txt", encoding="cp1251")`**
+- **Кодировка** -> другая кодировка выбирается параметром encoding, например: `read_text("data/lab4/input.txt", encoding="cp1251")`
 
 - **Файл не найден** -> программа выдаст `Ошибка: файл не найден : {сам файл}`
 ![alt text](../../images/lab4/fail(na)_test.png)
