@@ -1,13 +1,13 @@
 import csv
 from pathlib import Path
 
-def ensure_parent_dir(path):
+def ensure_parent_dir(path: str | Path) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
 
-def read_text(path, encounding: str = "utf-8"):
+def read_text(path, encounding: str = "utf-8") -> str:
     return Path(path).read_text(encoding=encounding)
 
-def write_csv(rows, path, header =None):
+def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
 
     rows = list(rows)
 
@@ -17,8 +17,8 @@ def write_csv(rows, path, header =None):
         for i in rows:
             if len(i) != dl:
                 raise ValueError('длина строк не совпадает')
-            if header is not None and len(header) != dl:
-                raise ValueError('длина заголовка не совпадает с длиной строк')
+        if header is not None and len(header) != dl:
+            raise ValueError('длина заголовка не совпадает с длиной строк')
 
     ensure_parent_dir(path)
     with open(path, 'w', newline="", encoding="utf-8") as f:
