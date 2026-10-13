@@ -3,8 +3,8 @@ import sys
 from src.lib.text import normalize, tokenize, count_freq, top_n
 from src.lab4.io_txt_csv import read_text, write_csv
 
-INPUT_FILE = "data/lab4/empty.txt"
-REPORT_FILE = "data/lab4/empty.csv"
+INPUT_FILE = "data/lab4/inpu.txt"
+REPORT_FILE = "data/lab4/report.csv"
 FILE_ENCODING = "utf-8"  
 
 def sorted_word_counts(freq):
@@ -18,7 +18,7 @@ def main():
         print(f"Ошибка: файл не найден: {INPUT_FILE}")
         sys.exit(1)
     except UnicodeDecodeError:
-        print(f"Ошибка: файл не читается в кодировке {FILE_ENCODING}")
+        print(f"Ошибка: файл не читается в кодировке {FILE_ENCODING})
         sys.exit(1)
 
     words = tokenize(normalize(text))
