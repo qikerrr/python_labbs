@@ -3,7 +3,7 @@ import sys
 from src.lib.text import normalize, tokenize, count_freq, top_n
 from src.lab4.io_txt_csv import read_text, write_csv
 
-INPUT_FILE = "data/lab4/inpu.txt"
+INPUT_FILE = "data/lab4/input.txt"
 REPORT_FILE = "data/lab4/report.csv"
 FILE_ENCODING = "utf-8"  
 
