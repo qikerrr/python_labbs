@@ -1,7 +1,7 @@
 # ЛР4 — Файлы: TXT/CSV и отчёты по текстовой статистике
 
 ## Задание A — модуль `src/lab04/io_txt_csv.py`
-## **`Тест`***proverka.csv*
+## **`Тест`** *proverka.csv*
 ![alt text](../../images/lab4/04lab_ex_A_input.png)
 
 ### **`Код`**
