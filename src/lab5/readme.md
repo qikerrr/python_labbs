@@ -11,7 +11,7 @@
 **2)** [**Задание В - CSV ↔ XLSX**](#задание-в---csv--xlsx)
 + [*csv_xlsx.py*](#csv_xlsxpy)
 + [Разбор всего кода](#разбор-кода-1)
-+ [***ТЕСТ ДЛЯ ЗАДАНИЯ В***]()
++ [***ТЕСТ ДЛЯ ЗАДАНИЯ В***](#тест-для-задания-в)
 
 
 ## Задание A — `JSON ↔ CSV`
@@ -253,6 +253,7 @@ def csv_xlsx(csv_path, xlsx_path):
         raise ValueError('Пустой CSV')
     wb = Workbook()
     ws = wb.active
+    ws.title = "Sheet1"
     for r in rows:
         ws.append(r)
     for i in range(len(rows[0])):

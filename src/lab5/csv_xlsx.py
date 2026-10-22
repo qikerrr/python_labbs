@@ -4,7 +4,7 @@ from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 
-from json_csv import proverka
+from .json_csv import proverka
 
 CSV_PATH = 'data/samples/cities.csv'
 CSV_TO_XL = 'data/out/xl_cities.xlsx'
@@ -18,6 +18,7 @@ def csv_xlsx(csv_path, xlsx_path):
         raise ValueError('Пустой CSV')
     wb = Workbook()
     ws = wb.active
+    ws.title = "Sheet1"
     for r in rows:
         ws.append(r)
     for i in range(len(rows[0])):
