@@ -1,7 +1,7 @@
 # ЛР5 — JSON и конвертации `(JSON↔CSV, CSV→XLSX)`
 ### `Содержание`
  **1)** [**Задание A — JSON ↔ CSV**](#Задание_A_—_JSON_↔_CSV)
-+ [*json_csv.py*](#Код`(json_csv.py)`)
++ [*json_csv.py*](#кодjson_csvpy)
 + [Разбор кода:](#разбор-кода)
   + [*def proverka...*](#функцияproverka)
   + [*def json_to_csv...*](#функцияjson_to_csv---конвертирует-из-json-в-сsv)
@@ -239,7 +239,7 @@ from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 
-from json_csv import proverka
+from .json_csv import proverka
 
 CSV_PATH = 'data/samples/cities.csv'
 CSV_TO_XL = 'data/out/xl_cities.xlsx'
