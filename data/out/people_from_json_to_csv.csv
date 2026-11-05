@@ -1,3 +1,3 @@
-name,age
-Alice,22
-Bob,25
+name,city,age
+Alice,wonderland,22
+Bob,,False
