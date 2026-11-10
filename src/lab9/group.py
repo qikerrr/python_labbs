@@ -32,10 +32,10 @@ def load_students(path):
 
             student = student_from_dict(row)
             students.append({
-                "fio": student.fio,
-                "birthdate": student.birthdate,
-                "group": student.group,
-                "gpa": student.gpa,
+                "fio": student["fio"],
+                "birthdate": student["birthdate"],
+                "group": student["group"],
+                "gpa": student["gpa"],
             })
 
     return students
@@ -59,10 +59,10 @@ def add_student(path, student):
 
     students = load_students(path)
     students.append({
-        "fio": validated.fio,
-        "birthdate": validated.birthdate,
-        "group": validated.group,
-        "gpa": validated.gpa,
+        "fio": validated["fio"],
+        "birthdate": validated["birthdate"],
+        "group": validated["group"],
+        "gpa": validated["gpa"],
     })
     save_students(path, students)
 
@@ -111,10 +111,10 @@ def update_student(path, fio, **fields):
             validate_student(validated)
 
             students[i] = {              
-                "fio": validated.fio,
-                "birthdate": validated.birthdate,
-                "group": validated.group,
-                "gpa": validated.gpa,
+                "fio": validated["fio"],
+                "birthdate": validated["birthdate"],
+                "group": validated["group"],
+                "gpa": validated["gpa"],
             }
 
             save_students(path, students)

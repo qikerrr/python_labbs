@@ -14,7 +14,13 @@
 **2)** [**Задание В - `cli_students.py`**](#задание-в---cli_studentspy)
 + [***Разбор кода***](#разбор-кода)
 
-
+**3)** [***`Результаты`***](#результаты)
++ [***Проверка*** `add`](#1-проверка-add)
++ [***Проверка*** `list`](#2-проверка-list)
++ [***Проверка*** `find`](#3-проверка-find)
++ [***Проверка*** `update`](#4-проверка-update)
++ [***Проверка*** `remove`](#5-проверка-remove)
++ [***Проверка*** `валидация ошибок`](#6-проверка-валидация-ошибок)
 
 ## Задание А - `group.py`
 ### `ensure_storage(path)`
@@ -51,10 +57,10 @@ def load_students(path):
 
             student = student_from_dict(row)
             students.append({
-                "fio": student.fio,
-                "birthdate": student.birthdate,
-                "group": student.group,
-                "gpa": student.gpa,
+                "fio": student["fio"],
+                "birthdate": student["birthdate"],
+                "group": student["group"],
+                "gpa": student["gpa"],
             })
 
     return students
@@ -86,10 +92,10 @@ def add_student(path, student):
 
     students = load_students(path)
     students.append({
-        "fio": validated.fio,
-        "birthdate": validated.birthdate,
-        "group": validated.group,
-        "gpa": validated.gpa,
+        "fio": validated["fio"],
+        "birthdate": validated["birthdate"],
+        "group": validated["group"],
+        "gpa": validated["gpa"],
     })
     save_students(path, students)
 ```
@@ -154,10 +160,10 @@ def update_student(path, fio, **fields):
             validate_student(validated)
 
             students[i] = {              
-                "fio": validated.fio,
-                "birthdate": validated.birthdate,
-                "group": validated.group,
-                "gpa": validated.gpa,
+                "fio": validated["fio"],
+                "birthdate": validated["birthdate"],
+                "group": validated["group"],
+                "gpa": validated["gpa"],
             }
 
             save_students(path, students)
@@ -286,3 +292,98 @@ if __name__ == "__main__":
 ---
 > Функция `main()` смотрит на *команду*, которую вызвали и соотвественно ей вызывает нужную функцию для преобразования со списком -> *`(удаление по фио, обновление данных, добавление данных...)`*
 > + Также перехватывает ошибки вида -> `ValueError/KeyError` *(сообщение в stderr + код 1 / при успехе код 0)*
+---
+---
+---
+## ***Результаты***
+### *Данные* - `students.csv`
+```
+fio,birthdate,group,gpa
+Иванов Иван,2007-10-10,БИВТ-26-6-1,4.7
+Петрова Мария,2007-05-21,БИВТ-26-6-2,4.8
+Смирнов Олег,2007-03-15,БИВТ-26-6-2,4.5
+```
+### **1)** ***Проверка*** `add`
+
+**ВВОД:**
+```
+python -m src.lab9.cli_students add --fio "Смирнов Олег" --birthdate 2007-03-15 --group БИВТ-26-6-2 --gpa 4.5
+```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/add.png)
+
+![alt text](../../images/lab9/add_csv.png)
+---
+---
+### **2)** ***Проверка*** `list`
+
+**ВВОД:** при `None`
+```
+python -m src.lab9.cli_students list
+```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/list_NONE.png)
+---
+**ВВОД:** при `gpa`
+```
+python -m src.lab9.cli_students list --sort gpa
+```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/list_GPA.png)
+
+---
+**ВВОД:** при `fio`
+```
+python -m src.lab9.cli_students list --sort fio
+```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/list_FIO.png)
+---
+---
+### **3)** ***Проверка*** `find`
+**ВВОД:**
+```
+python -m src.lab9.cli_students find --q иван
+```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/find.png)
+
+---
+---
+### **4)** ***Проверка*** `update`
+**ВВОД:**
+```
+python -m src.lab9.cli_students update --fio "Иванов Иван" --gpa 4.7
+```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/update.png)
+
+![alt text](../../images/lab9/UP_RE.png)
+---
+---
+### **5)** ***Проверка*** `remove`
+**ВВОД:**
+```
+ python -m src.lab9.cli_students remove --fio "Сидоров Пётр"
+ ```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/remove.png)
+
+![alt text](../../images/lab9/UP_RE.png)
+---
+---
+### **6)** ***Проверка*** `валидация ошибок`
+**ВВОД:**
+```
+python -m src.lab9.cli_students add --fio "Тестов Тест" --birthdate 2007-01-01 --group БИВТ-26-6-1 --gpa 99
+```
+**ВЫВОД:**
+
+![alt text](../../images/lab9/valid_GPA.png)
